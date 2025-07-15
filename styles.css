@@ -1,0 +1,143 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic);
+
+/* Basic Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Roboto, sans-serif;
+}
+
+
+body {
+  background: linear-gradient(135deg, #8aadf8, #aac3fa);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.container {
+  background: rgb(237, 237, 250);
+  border-radius: 1rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 800px;
+  padding: 2rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #222;
+  padding-bottom: 0.3rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 45%;
+  height: 0.2rem;
+  background-color: #8372f0;
+  border-radius: 0.1rem;
+}
+
+#generate-btn {
+  background: linear-gradient(to right, #8372f0, #a34df3);
+  align-self: flex-start;
+  margin-bottom: 2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  border: none;
+  border-radius: 2rem;
+  padding: 1rem;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+#generate-btn:hover {
+  cursor: pointer;
+  transform: translateY(0.2rem);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+#generate-btn:active {
+  transform: translateY(0);
+}
+
+.palette-container {
+  color: #222;
+  width: 100%;
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+}
+
+.color-box {
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-radius: 1rem;
+}
+
+.color {
+  height: 6rem;
+}
+
+.color-info {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 0.9rem;
+  transition: transform 0.2s ease;
+}
+
+.hex-value {
+  font-weight: 500;
+  letter-spacing: 0.05rem;
+}
+
+.color-box:hover {
+  color: #111;
+  cursor: pointer;
+  transform: translateY(0.2rem);
+}
+
+.color-box:active {
+  color: #444;
+  transform: translateY(0);
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
+  }
+
+  .palette-container {
+    grid-template-columns: repeat(auto-fit, minmax(5rem, 1fr));
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  #generate-btn {
+    font-size: 0.9rem;
+  }
+
+  .color {
+    height: 5rem;
+  }
+
+  .color-info {
+    font-size: 0.8rem;
+  }
+}
